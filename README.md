@@ -9,7 +9,7 @@ Policy Extraction</h1>
   </ul>
 </div>
 
-<img src="assets/deflow.pdf" width="80%">
+<img src="assets/deflow.png" width="80%">
 
 </div>
 
