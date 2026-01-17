@@ -3,8 +3,9 @@
 <div id="user-content-toc" style="margin-bottom: 50px">
   <ul align="center" style="list-style: none;">
     <summary>
-      <h1>Decoupling Manifold Modeling and Value Maximization for Offline
-Policy Extraction</h1>
+      <h1>Decoupling Manifold Modeling and Value Maximization for Offline Policy Extraction</h1>
+      <br>
+      <h2><a href="http://arxiv.org/abs/2601.10471">Paper</a> &emsp; <a href="https://muzhancun.github.io/preprints/deflow">Project page</a></h2>
     </summary>
   </ul>
 </div>
