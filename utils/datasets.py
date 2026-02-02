@@ -81,22 +81,17 @@ class Dataset(FrozenDict):
     def precompute_mc_returns(self):
         """Pre-compute discounted return-to-go for the entire dataset once."""
         rewards = self._dict['rewards']
-        # 你的代码里用 initial_locs 来判断轨迹边界，这里保持一致
-        # 轨迹结束的位置是下一个轨迹开始位置的前一个，或者是整个数据集的最后一个
         terminals = np.zeros_like(rewards, dtype=bool)
         if hasattr(self, 'initial_locs'):
             end_idxs = self.initial_locs[1:] - 1
             terminals[end_idxs] = True
             terminals[-1] = True
         else:
-            # 如果没有 initial_locs，假设这是单一轨迹或有 terminals 标记
-            # 建议还是依赖你现有的 initial_locs 逻辑
             terminals[-1] = True
 
         mc_returns = np.zeros_like(rewards)
         ret = 0.0
         
-        # 倒序遍历一次，速度很快 (1M 数据约 0.5秒)
         for t in reversed(range(len(rewards))):
             if terminals[t]:
                 ret = rewards[t]
@@ -362,7 +357,6 @@ class ReplayBuffer(Dataset):
             if key in transition:
                 self._dict[key][self.pointer] = transition[key]
             else:
-                # 如果 transition 中缺少某个键（例如 chunked_actions），则将其当前位置清零
                 self._dict[key][self.pointer] = 0
 
         self.pointer = (self.pointer + 1) % self.max_size
