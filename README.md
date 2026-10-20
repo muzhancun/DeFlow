@@ -5,7 +5,7 @@
     <summary>
       <h1>Decoupling Behavior-Prior Modeling and Value Maximization for Offline Policy Extraction</h1>
       <br>
-      <h2><a href="http://arxiv.org/abs/2601.10471">Paper</a> &emsp; <a href="https://muzhancun.github.io/preprints/deflow">Project page</a></h2>
+      <h2><a href="http://arxiv.org/abs/2601.10471">Paper</a> &emsp; <a href="https://muzhancun.github.io/publications/deflow">Project page</a></h2>
     </summary>
   </ul>
 </div>
